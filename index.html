@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Beverly Li: Full-Stack Web Developer</title>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <meta name="viewport" content="width=device-width">
+   </head>
+   <body>
+     <a id="skip-to-main" class="hidden" href="#main-content" tabindex="0">Skip to main content</a>
+      <header id="main-header">
+         <div class="page-wrapper">
+            <a href=""><img id="main-header-logo" src="images/logo.png" alt="Beverly's
+               Site Logo" /></a>
+            <nav id="main-header-nav">
+               <h2 class="hidden">Main Navigation</h2>
+               <ul>
+                  <li><a href="">Home</a></li><!--
+               --><li><a href="">About</a></li><!--
+               --><li><a href="">Contact</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <main id="main-content">
+        <h1 class="hidden">A Rainy Night in Winter</h1>
+          <div id="game-container" class="flex-container">
+            <div class="page-wrapper">
+               <div id="game" class="flex-container">
+                  <div id="instructions-page" tabindex="0">
+                     <div id="game-instructions">
+                       <h2>A Rainy Night in Winter</h2>
+                        <p>
+                           It's a very rainy night in winter. Legend has it that
+                           rain in the winter brings luck. Tonight 100 raindrops
+                           will fall. Catch as many as you can!
+                        </p>
+                     </div>
+                     <div id="instructions-img-and-btn">
+                        <div id="instructions-drop-image">
+                           <img src="images/drop.png" class="drop" alt="blue teardrop"/>
+                        </div>
+                       <button id="start-btn" class="button">
+                          <span class="start">S</span>
+                          <span class="start">t</span>
+                          <span class="start">a</span>
+                          <span class="start">r</span>
+                          <span class="start">t</span>
+                       </button>
+                     </div>
+                  </div>
+                  <div id="game-start">
+                     <div id="score-and-back-btn">
+                        <div id="score" tabindex="0"></div>
+                        <div id="back-btn">
+                           <button class="button">
+                              Back
+                           </button>
+                        </div>
+                     </div>
+                     <div id="moon"></div>
+                     <div id="cloud1" class="cloud"></div>
+                     <div id="cloud2" class="cloud"></div>
+                     <div id="cloud3" class="cloud"></div>
+                     <div id="snow-container"></div>
+                     <div id="drop-container"></div>
+                     <div id="basket"></div>
+                     <div id="ground"></div>
+                  </div>
+                  <div id="game-over" tabindex="0">
+                     <div id="game-over-content"></div>
+                     <div id="play-again">
+                       Would you like to play again?
+                       <div id="play-again-btn">
+                         <button class="button">
+                           Play Again
+                         </button>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+               <audio id="background-music" controls loop class="hidden">
+                  <source src="sound/piano.mp3" type="audio/mpeg">
+               </audio>
+               <audio id="drop-sound" controls class="hidden">
+                  <source src="sound/drop.mp3" type="audio/mpeg">
+               </audio>
+            </div>
+         </div>
+      </main>
+      <footer id="main-footer" class="flex-container" tabindex="0">
+         <h2 class="hidden">Main Footer</h2>
+         <p class="copyright">Copyright &copy; 2018 Beverly Li</p>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>

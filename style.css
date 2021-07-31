@@ -16,52 +16,54 @@
  ***********************************************/
 
 /*1. DEFAULT OVERRIDES*/
-html{
+html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Lato', Sans-Serif;
+  font-family: "Lato", Sans-Serif;
 }
 
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   color: white;
   background-color: white;
 }
 
-audio{
+audio {
   display: none;
 }
 
-img{
+img {
   padding: 0;
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   transition: all 0.5s;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
 }
 
-li{
+li {
   display: inline-block;
 }
 
-button{
-	all: unset;
+button {
+  all: unset;
 }
 
 /*2. GENERAL CLASSES*/
-.page-wrapper{
+.page-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -71,72 +73,79 @@ button{
   flex-flow: row wrap;
 }
 
-.hidden{
+.hidden {
   position: absolute;
   left: -10000px;
 }
 
-.button{
+.button {
   border: 1px solid white;
   padding: 5px;
   border-radius: 5px;
   display: inline-block;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.button:hover{
+.button:hover {
   background-color: #3b3948;
-  box-shadow: 0 0 10px rgba(255,255,255, 1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
   cursor: pointer;
 }
 
 /*3. GENERAL STYLING*/
-#game, #instructions-page, #game-start{
+#game,
+#instructions-page,
+#game-start {
   width: 500px;
   height: 500px;
   position: relative;
-  box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
-.button, #score, #main-header, #main-footer{
+.button,
+#score,
+#main-header,
+#main-footer {
   text-transform: uppercase;
 }
 
-#game-over-content, #play-again, #instructions-img-and-btn img{
+#game-over-content,
+#instructions-img-and-btn img {
   margin-top: 10px;
 }
 
 /*4. HEADER*/
-#main-header, #main-footer{
+#main-header,
+#main-footer {
   background-color: #201f27;
 }
 
-#main-header{
+#main-header {
   border-bottom: 1px solid #383838;
   justify-content: flex-start;
 }
 
-#main-header .page-wrapper{
+#main-header .page-wrapper {
   margin: 0;
 }
 
-#main-header-nav{
+#main-header-nav {
   display: inline-block;
   vertical-align: middle;
 }
 
-#main-header-nav a{
+#main-header-nav a {
   display: inline-block;
   margin-left: 20px;
   color: white;
 }
 
-#main-header-nav a:hover{
+#main-header-nav a:hover {
   animation: changeColor 2s infinite alternate forwards;
   transform: scale(1.2);
 }
 
-#main-header-logo{
+#main-header-logo {
   display: inline-block;
   vertical-align: middle;
   max-width: 30px;
@@ -144,42 +153,48 @@ button{
 }
 
 /*5. GAME CONTAINER*/
-#game-container{
+#game-container {
   width: 100%;
   text-align: center;
   justify-content: center;
   padding: 50px;
 }
 
-#game{
+#game {
   background-color: black;
 }
 
 /*6. GAME START*/
-#game-start{
+#game-start {
   background: linear-gradient(#121216, #38384a), #000;
   position: relative;
   overflow: hidden;
 }
 
-#score{
-  position: relative;
+#score-and-back-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#score {
+  position: absolute;
+  width: 100%;
   text-align: center;
-  display: block;
-  padding: 5px;
-  top: 10px;
   cursor: default;
 }
 
-#back-btn .button{
-  position: absolute;
-  padding: 0 7px;
-  top: 10px;
-  right: 30px;
+#back-btn {
+  margin-right: 30px;
   z-index: 100;
 }
 
-#basket{
+#back-btn .button {
+  padding: 0 7px;
+}
+
+#basket {
   background-color: transparent;
   border: 1px solid white;
   width: 50px;
@@ -189,20 +204,21 @@ button{
   left: 50%;
 }
 
-.water{
+.water {
   background-image: url("images/water.png");
   background-position: 0 0;
-  animation: glowBlue 2s infinite linear forwards, waterFill 3.5s 1 linear forwards,
+  animation: glowBlue 2s infinite linear forwards,
+    waterFill 3.5s 1 linear forwards,
     waterShift 1s infinite linear forwards 3.5s alternate;
   max-width: 50px;
 }
 
-.drop{
+.drop {
   border-radius: 50%;
-  background-color: rgba(255 , 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-.cloud{
+.cloud {
   background-image: url("images/cloud.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -213,7 +229,7 @@ button{
   width: 200px;
 }
 
-#moon{
+#moon {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
@@ -224,27 +240,27 @@ button{
   animation: bigGlow 5s infinite linear;
 }
 
-#cloud1{
+#cloud1 {
   animation: moveCloud 60s infinite linear;
 }
 
-#cloud2{
+#cloud2 {
   top: 70px;
   animation: moveCloud 50s infinite linear;
 }
 
-#cloud3{
+#cloud3 {
   top: 30px;
   animation: moveCloud 30s infinite linear;
 }
 
-.snow{
+.snow {
   position: absolute;
   background-color: #fff;
   border-radius: 50%;
 }
 
-#ground{
+#ground {
   position: absolute;
   top: 400px;
   width: 100%;
@@ -253,12 +269,11 @@ button{
   opacity: 0.8;
 }
 
-
 /*7. GAME OVER*/
-#game-over{
+#game-over {
   width: 300px;
   height: 200px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
   z-index: 500;
   top: 50%;
@@ -267,177 +282,182 @@ button{
   margin-left: -150px;
   margin-top: -100px;
   animation: scaleDown 1.5s 1 forwards, fadeIn 3.5s 1 forwards;
+  user-select: none;
 }
 
-#game-over::before{
+#game-over::before {
   content: "GAME OVER";
-  background-color: rgba(255,255,255,0.25);
+  background-color: rgba(255, 255, 255, 0.25);
   width: 100%;
   font-weight: bold;
   display: block;
   border-radius: 5px 5px 0 0;
-  padding: 5px;
+  padding: 7px;
 }
 
-#game-over-content{
+#game-over-content {
   font-weight: bold;
   opacity: 0.01;
   padding: 15px;
   animation: scaleDownBig 5s 1 forwards, fadeInSlow 3s 1 ease-in forwards;
 }
 
-
-#play-again{
+#play-again {
   animation: fadeInSlow 5s 1 ease-in forwards, blurIn 5s 1 ease-in forwards;
 }
 
-#play-again .button{
+#play-again .button {
+  margin-top: 20px;
   animation: glow 1.5s infinite linear, fadeInSlow 4s 1 ease-in forwards;
 }
 
 /*8. GAME INSTRUCTIONS*/
-#instructions-page{
+#instructions-page {
   padding: 50px;
   background: linear-gradient(#000, #191923), #000;
 }
 
-#instructions-img-and-btn img{
+#instructions-img-and-btn img {
   width: 18px;
   animation: glow 1.5s infinite linear, bounce 1.5s infinite ease-in-out,
     fadeInSlow 4s 1 ease-in forwards;
 }
 
-#game-instructions{
+#game-instructions {
   margin-bottom: 50px;
 }
 
-#game-instructions p{
+#game-instructions p {
   animation: scaleDown 1.5s 1 forwards, fadeIn 3.5s 1 forwards;
 }
 
-#start-btn{
+#start-btn {
   display: inline-block;
   margin-top: 10px;
   animation: changeColor 20s infinite;
 }
 
-.start:nth-child(1){
+.start:nth-child(1) {
   animation: slightFade 5s infinite 100ms;
 }
 
-.start:nth-child(2){
+.start:nth-child(2) {
   animation: slightFade 5s infinite 200ms;
 }
 
-.start:nth-child(3){
+.start:nth-child(3) {
   animation: slightFade 5s infinite 300ms;
 }
 
-.start:nth-child(4){
+.start:nth-child(4) {
   animation: slightFade 5s infinite 400ms;
 }
 
-.start:nth-child(5){
+.start:nth-child(5) {
   animation: slightFade 5s infinite 500ms;
 }
 
 /*9. FOOTER*/
-#main-footer{
+#main-footer {
   border: 1px solid transparent;
   border-top: 1px solid #383838;
   justify-content: center;
   margin: 0;
 }
 
-#main-footer p{
+#main-footer p {
   line-height: 0.75em;
 }
 
 /*10. ANIMATIONS*/
-@keyframes changeColor{
-  0%, 100%{
+@keyframes changeColor {
+  0%,
+  100% {
     color: white;
     border-color: white;
   }
-  20%{
+  20% {
     color: pink;
     border-color: pink;
   }
-  50%{
+  50% {
     color: #cda1ff;
     border-color: #cda1ff;
   }
-  70%{
+  70% {
     color: #b5f7ff;
     border-color: #b5f7ff;
   }
 }
 
-@keyframes bounce{
-  0%, 100%{
+@keyframes bounce {
+  0%,
+  100% {
     transform: translate(0px, 0px);
   }
-  50%{
+  50% {
     transform: translate(0px, -10px);
   }
 }
 
-@keyframes moveCloud{
-  0%{
+@keyframes moveCloud {
+  0% {
     left: -200px;
   }
-  100%{
+  100% {
     left: 500px;
   }
 }
 
-@keyframes blurIn{
-  from{
+@keyframes blurIn {
+  from {
     filter: blur(2px);
   }
 }
 
-@keyframes slightFade{
-  0%{
+@keyframes slightFade {
+  0% {
     opacity: 0.25;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes fadeIn{
-  0%{
+@keyframes fadeIn {
+  0% {
     opacity: 0.001;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes fadeInSlow {
-  0%, 50%{
+  0%,
+  50% {
     opacity: 0.001;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes scaleDown{
-  from{
+@keyframes scaleDown {
+  from {
     transform: scale(1.2);
   }
 }
 
-@keyframes scaleDownBig{
-  from{
+@keyframes scaleDownBig {
+  from {
     transform: scale(1.5);
   }
 }
 
-@keyframes sway{
-  0%, 100%{
+@keyframes sway {
+  0%,
+  100% {
     transform: translateX(0px);
   }
   50% {
@@ -445,92 +465,99 @@ button{
   }
 }
 
-@keyframes waterFill{
-  to{
+@keyframes waterFill {
+  to {
     background-position: -10px -20px;
   }
 }
 
-@keyframes waterShift{
-  from{
+@keyframes waterShift {
+  from {
     background-position: -10px -20px;
   }
-  to{
+  to {
     background-position: -5px -20px;
   }
 }
 
-@keyframes glow{
-  0% , 100%{
-    box-shadow: 0 0 15px rgba(255,255,255, 0);
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0);
   }
-  50%{
-    box-shadow: 0 0 35px rgba(255,255,255, 1);
+  50% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 1);
   }
 }
 
 @keyframes bigGlow {
-    0% , 100%{
-      box-shadow: 0 0 60px rgba(255,255,255, 0.5);
-    }
-    70%{
-      box-shadow: 0 0 65px rgba(255,255,255, 1);
-    }
+  0%,
+  100% {
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 65px rgba(255, 255, 255, 1);
+  }
 }
 
-@keyframes glowBlue{
-  0% , 100%{
-    box-shadow: 0 -20px 15px rgba(255,255,255, 0);
+@keyframes glowBlue {
+  0%,
+  100% {
+    box-shadow: 0 -20px 15px rgba(255, 255, 255, 0);
   }
-  50%{
+  50% {
     box-shadow: 0px -20px 15px rgba(107, 185, 240, 0.2);
   }
 }
 
-@keyframes fallDrop{
-    90%{
-      opacity: 1;
-    }
-    100%{
-      opacity: 0;
-      top: 385px; /* 400 (position of ground) - 15 (height of drop)*/
-    }
+@keyframes fallDrop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 385px; /* 400 (position of ground) - 15 (height of drop)*/
+  }
 }
 
 @keyframes fallFade {
-  80%{
+  80% {
     opacity: 0.25;
   }
-  100%{
+  100% {
     top: 400px; /*position of ground*/
     opacity: 0;
   }
 }
 
 /*11. MEDIA QUERIES*/
-@media screen and (max-width:600px) {
-  #game, #instructions-page, #game-start{
+@media screen and (max-width: 600px) {
+  #game,
+  #instructions-page,
+  #game-start {
     width: 400px;
   }
 }
 
-@media screen and (max-width:500px) {
-  #game, #instructions-page, #game-start{
+@media screen and (max-width: 500px) {
+  #game,
+  #instructions-page,
+  #game-start {
     width: 300px;
   }
 }
 
-@media screen and (max-width:400px) {
-  #main-header{
+@media screen and (max-width: 400px) {
+  #main-header {
     justify-content: center;
   }
-  #main-header-logo{
-      margin: 0;
+  #main-header-logo {
+    margin: 0;
   }
 }
 
 /*12. SKIP TO MAIN*/
-#skip-to-main:focus{
-   position: relative;
-   left: 0;
+#skip-to-main:focus {
+  position: relative;
+  left: 0;
 }
